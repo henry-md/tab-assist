@@ -210,7 +210,3 @@ The database schema is defined in the `convex/schema.ts` file and includes table
 - Improved error handling and user feedback
 - Enhanced UI components with shadcn/ui
 - Added automatic content extraction for tab groups
-
-## Licensing
-
-Refer to the [Project Repository License](./LICENSE.md) for information on how the project is licensed.
