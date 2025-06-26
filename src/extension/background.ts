@@ -1,4 +1,8 @@
 console.log("[background.ts] loaded");
+import { format } from 'date-fns'
+
+const testDate = new Date();
+console.log('testing format method:', format(testDate, 'yyyy-MM-dd HH:mm:ss'));
 
 const tabUrls = new Map();
 
