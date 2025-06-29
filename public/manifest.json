@@ -4,21 +4,16 @@
     "version": "1.0.0",
     "description": "A simple React app as a Chrome extension",
     "icons": {
-        "16": "tabAssistLogo.png",
-        "32": "tabAssistLogo.png",
-        "48": "tabAssistLogo.png",
-        "128": "tabAssistLogo.png"
+        "16": "icons/16.png",
+        "32": "icons/32.png",
+        "48": "icons/48.png",
+        "64": "icons/64.png",
+        "128": "icons/128.png"
     },
     "action": {
       "default_popup": "index.html",
       "default_width": 800,
-      "default_height": 600,
-      "default_icon": {
-        "16": "tabAssistLogo.png",
-        "32": "tabAssistLogo.png",
-        "48": "tabAssistLogo.png",
-        "128": "tabAssistLogo.png"
-      }
+      "default_height": 600
     },
     "permissions": ["tabs", "tabGroups", "storage", "scripting", "activeTab", "contextMenus"],
     "host_permissions": ["<all_urls>"],

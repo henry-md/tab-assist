@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { AutosizeTextarea } from "@/components/ui/autoresize-textarea";
 import Markdown from "@/components/markdown";
-import logo from "../../../public/tabAssistLogo.png";// Import from public folder root
+import logo from "../../../public/icons/128.png";// Import from public folder root
 
 const DEBUG = false;
 
@@ -79,7 +79,7 @@ const Message: React.FC<MessageProps> = ({ message }) => {
   return (
     <div
       className={cn(
-        "flex gap-3 px-4 py-2 group hover:bg-accent/50 transition-colors",
+        "flex gap-3 px-4 py-2 transition-colors group hover:bg-accent/50",
         {
           "border-2 border-red-500": DEBUG,
         },
@@ -116,8 +116,8 @@ const Message: React.FC<MessageProps> = ({ message }) => {
           "border-2 border-green-500": DEBUG,
         })}
       >
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
+        <div className="flex gap-2 justify-between items-center">
+          <div className="flex gap-2 items-center">
             <span className="font-medium text-foreground">
               {isAssistant ? "Assistant" : "You"}
             </span>
@@ -129,19 +129,19 @@ const Message: React.FC<MessageProps> = ({ message }) => {
             </span>
           </div>
 
-          <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="flex gap-1 items-center opacity-0 transition-opacity group-hover:opacity-100">
             <Button
               variant="ghost"
               size="icon"
-              className={cn("h-8 w-8 transition-colors", {
+              className={cn("w-8 h-8 transition-colors", {
                 "text-primary": copied,
               })}
               onClick={handleCopy}
             >
               {copied ? (
-                <Check className="h-4 w-4" />
+                <Check className="w-4 h-4" />
               ) : (
-                <Copy className="h-4 w-4" />
+                <Copy className="w-4 h-4" />
               )}
             </Button>
 
@@ -149,11 +149,11 @@ const Message: React.FC<MessageProps> = ({ message }) => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8"
+                className="w-8 h-8"
                 onClick={handleRegenerate}
                 disabled={isRegenerating}
               >
-                <RefreshCw className={cn("h-4 w-4", {
+                <RefreshCw className={cn("w-4 h-4", {
                   "animate-spin": isRegenerating
                 })} />
               </Button>
@@ -161,12 +161,12 @@ const Message: React.FC<MessageProps> = ({ message }) => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8"
+                className="w-8 h-8"
                 onClick={() => {
                   setIsEditing(true);
                 }}
               >
-                <Edit className="h-4 w-4" />
+                <Edit className="w-4 h-4" />
               </Button>
             ) : null}
           </div>
@@ -182,9 +182,9 @@ const Message: React.FC<MessageProps> = ({ message }) => {
               <AutosizeTextarea
                 value={messageContent}
                 onChange={(e) => setMessageContent(e.target.value)}
-                className="resize-y w-full h-full"
+                className="w-full h-full resize-y"
               />
-              <div className="flex justify-end gap-2 mt-2">
+              <div className="flex gap-2 justify-end mt-2">
                 <Button size={"sm"} variant={"secondary"} onClick={handleEdit}>
                   Save
                 </Button>
